@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/media.css">
+    <script defer src="./js/index.js"></script> <!-- Для того, чтобы js запустился после загрузки страницы -->
+    <title>World bank balance</title>
+</head>
+
+<body>
+    <div class="wrapper">
+    <header class="header">
+        <div class="container">
+            <div class="title-wrap">
+                <h1 class="header__title">World Bank balance</h1>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="container">
+            <section class="first-module section-offset">
+                <div class="first-module__left">
+                    <div class="first-module__top">
+                        <h2 class="first-module__left-title">branch stability</h2>
+                        <span class="first-module__name">Restore all branches to a safe state</span>
+                    </div>
+                    <div class="first-module__map">
+                        <span class="first-module__label first-label js-label" data-num='r1'>
+                            1<img src="./images/label.svg" alt="label">
+                        </span>
+                        <span class="first-module__label sec-label js-label" data-num='r2'>
+                            2<img src="./images/label.svg" alt="label">
+                        </span>
+                        <span class="first-module__label third-label js-label" data-num='r3'>
+                            3<img src="./images/label.svg" alt="label">
+                        </span>
+                        <span class="first-module__label fourth-label js-label" data-num='r4'>
+                            4<img src="./images/label.svg" alt="label">
+                        </span>
+                        <img src="./images/map.png" alt="map">
+                    </div>
+                    <div class="first-module__bottom">
+                        <form id="branch-form" action="#">
+                            <label for="r1" class="first-module__input-wrap">
+                                <input id="r1" type="radio" class="first-module__btn js-radio" value="r1" name="radio">
+                                <span class="branch-name">Branch 1</span>
+                            </label>
+                            <label for="r2" class="first-module__input-wrap">
+                                <input id="r2" type="radio" class="first-module__btn js-radio" value="r2" name="radio">
+                                <span class="branch-name">Branch 2</span>
+                            </label>
+                            <label for="r3" class="first-module__input-wrap">
+                                <input id="r3" type="radio" class="first-module__btn js-radio" value="r3" name="radio">
+                                <span class="branch-name">Branch 3</span>
+                            </label>
+                            <label for="r4" class="first-module__input-wrap last">
+                                <input id="r4" type="radio" class="first-module__btn js-radio" value="r4" name="radio">
+                                <span class="branch-name">Branch 4</span>
+                            </label>
+                        </form>
+                        <span class="first-module__note">
+                            To achieve the desired position of all branches, you need to toggle the radio buttons and
+                            find the desired state in which all branches will be stable
+                        </span>
+                    </div>
+                </div>
+                <div class="first-module__right">
+                    <div class="first-module__right-top">
+                        <div class="first-module__right-part" id="first-part">
+                            <ul class="toggle-wrap">
+                                <div class="toggle-wrap-top">
+                                    <li class="toggle _active" data-place="off">
+                                        <span class="toggle-circle">
+
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M2 12H22" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </span>
+                                    </li>
+
+                                    <li class="toggle" data-place="off">
+                                        <span class="toggle-circle">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M2 12H22" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+
+                                        </span>
+                                    </li>
+                                </div>
+                                    <li id="toggle-text">ON/OFF country</li>
+                                <div class="toggle-wrap-bottom">
+                                    <li class="toggle _active" data-place="off2">
+                                        <span class="toggle-circle">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M2 12H22" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+
+                                        </span>
+                                    </li>
+                                    <li class="toggle" data-place="off2">
+                                        <span class="toggle-circle">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M2 12H22" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+
+                                        </span>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+                        <div class="first-module__right-part" id="sec-part">
+                            <div class="button"></div>
+                            <span class="button-text">Press button for the end</span>
+                        </div>
+                        <div class="first-module__right-part">
+                            <ul class="toggle-wrap">
+                                <div class="toggle-wrap-top">
+                                    <li class="toggle _active" data-place="off3">
+                                        <span class="toggle-circle">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M2 12H22" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </span>
+                                    </li>
+                                    <li class="toggle" data-place="off3">
+                                        <span class="toggle-circle">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M2 12H22" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+
+                                        </span>
+                                    </li>
+                                </div>
+                                <li id="toggle-text">ON/OFF country</li>
+                                <div class="toggle-wrap-bottom">
+                                    <li class="toggle _active" data-place="off4">
+                                        <span class="toggle-circle">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M2 12H22" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+
+                                        </span>
+                                    </li>
+                                    <li class="toggle" data-place="off4">
+                                        <span class="toggle-circle">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M2 12H22" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12 2C14.5013 4.73835 15.9228 8.29203 16 12C15.9228 15.708 14.5013 19.2616 12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2Z"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+
+                                        </span>
+                                    </li>
+                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="first-module__right-bottom">
+                        <div class="first-module__graph-top">
+                            <span class="graph-note">Please check the state of the graph</span>
+                        </div>
+                        <div class="first-module__graph-bottom">
+                            <ul class="block-wrap">
+                                <div class="block"></div>
+                                <div class="block"></div>
+                                <div class="block"></div>
+                                <div class="block"></div>
+                                <div class="block orange-block"></div>
+                                <div class="block orange-block"></div>
+                                <div class="block orange-block"></div>
+                                <div class="block orange-block"></div>
+                                <div class="block orange-block"></div>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Second line -->
+            <section class="second-module section-offset">
+                <div class="second-module__left">
+                    <div class="second-module__spin-top">
+                        <span>Find the perfect position for these switches</span>
+                    </div>
+                    <div class="second-module__bottom">
+                        <ul class="spinner-wrap">
+                            <li class="spinner"></li>
+                            <li class="spinner"></li>
+                            <li class="spinner"></li>
+                            <li class="spinner"></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="second-module__right">
+                    <div class="second-module__slider-top">
+                        <span>Please check the state of the graph</span>
+                    </div>
+                    <div class="second-module__slider-bottom">
+                        <ul class="slider-wrap">
+                            <li class="slider"><input value="1" min="1" max="150" type="range" class="range"></li>
+                            <li class="slider"><input value="1" min="1" max="150" type="range" class="range"></li>
+                            <li class="slider"><input value="1" min="1" max="150" type="range" class="range"></li>
+                            <li class="slider"><input value="1" min="1" max="150" type="range" class="range"></li>
+                            <li class="slider"><input value="1" min="1" max="150" type="range" class="range"></li>
+                            <li class="slider"><input value="150" min="1" max="150" type="range" class="range"></li>
+                            <li class="slider"><input value="150" min="1" max="150" type="range" class="range"></li>
+                            <li class="slider"><input value="150" min="1" max="150" type="range" class="range"></li>
+                            <li class="slider"><input value="150" min="1" max="150" type="range" class="range"></li>
+                            <li class="slider"><input value="150" min="1" max="150" type="range" class="range"></li>
+                            <li class="slider"><input value="150" min="1" max="150" type="range" class="range"></li>
+                            <li class="slider"><input value="1" min="1" max="150" type="range" class="range"></li>
+                        </ul>
+                        <ul class="numbers">
+                            <li class="num">2124</li>
+                            <li class="num">6546</li>
+                            <li class="num">763</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- Third Line -->
+            <section class="third-module">
+                <div class="third-module__left">
+                    <div class="third-module__text">
+                        <span>Find the perfect position for these switches</span>
+                    </div>
+                    <div class="third-module__main-wrap">
+                        <div class="third-module__circles">
+                            <img src="./images/spinner1.svg" alt="spinner" class="circle-spin" data-spinner="s1">
+                            <img src="./images/spinner2.svg" alt="spinner" class="circle-spin" data-spinner="s2">
+                            <img src="./images/spinner3.svg" alt="spinner" class="circle-spin" data-spinner="s3">
+                            <img src="./images/spinner4.svg" alt="spinner" class="circle-spin" data-spinner="s4">
+                        </div>
+                        <div class="third-module__switches">
+                            <ul class="spin-list">
+                                <li class="spin-item item-toggle">
+                                    <span class="item-circle" data-spinner="s1"></span>
+                                </li>
+                                <li class="spin-item item-toggle">
+                                    <span class="item-circle" data-spinner="s2"></span>
+                                </li>
+
+                                <li class="spin-item item-toggle">
+                                    <span class="item-circle" data-spinner="s3"></span>
+                                </li>
+                                <li class="spin-item item-toggle">
+                                    <span class="item-circle" data-spinner="s4"></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="third-module__text">
+                        <span>twist and turn until you get it right</span>
+                    </div>
+                </div>
+                <div class="third-module__right">
+                    <div class="third-module__text">
+                        <span>Connect all graph points to straighten both graphs</span>
+                    </div>
+                <div class="graph-wrap">
+                    <div class="third-module__graph">
+                        <svg class="graph-line" width="543" height="139" viewBox="0 0 543 139" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="svg first-svg" d="M1 3.31731C44.4684 -5.30769 76.7403 43.7885 108.354 43.7885C139.967 43.7885 154.457 13.9315 174.873 8.6244C195.29 3.31731 238.1 88.9033 264.445 83.5956C290.789 78.2879 318.451 25.2109 350.064 29.8552C381.678 34.4994 392.215 139.326 419.218 136.009C446.222 132.692 472.566 66.3456 498.91 69.6629C525.255 72.9802 526.572 110.134 541.72 116.769" stroke="#FF5C00" stroke-width="3.98077"/>
+                        </svg>
+                        <svg class="graph-line" width="508" height="164" viewBox="0 0 508 164" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="svg sec-svg" d="M1.63745 150.941C35.8853 131.701 39.8369 113.788 53.0092 99.1915C66.1814 84.5953 77.3778 121.749 99.7706 114.451C122.163 107.153 153.118 81.9419 168.925 54.0765C184.732 26.2111 211.065 12.8071 228.189 32.7109C245.312 52.6148 265.741 99.1915 290.768 99.1915C315.795 99.1915 326.333 8.9611 346.75 8.9611C367.167 8.9611 376.388 58.0564 386.925 68.6717C397.463 79.2871 427.101 83.267 430.394 68.6717C433.687 54.0765 427.101 -21.5572 450.152 8.9611C473.203 39.4794 480.448 78.6248 485.717 99.1915C489.932 115.645 501.085 148.508 506.134 162.883" stroke="#0F61FF" stroke-width="2.65385"/>
+                        </svg>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+                    <div class="third-module__warning">
+                        <span>WARNING</span>
+                    </div>
+                </div>
+            </section>
+            <!-- Fourth Line -->
+            <section class="fourth-module">
+                <div class="fourth-module__left">
+                    <div class="fourth-module__top">
+                        <div class="diagramm-left">
+                            <h2 class="diagramm-title">
+                                Level of safety system
+                            </h2>
+                            <span class="diagramm-text">
+                                Attention, keep the indicators normal, otherwise the branch will come to an end
+                            </span>
+                        </div>
+                        <div class="diagramm-right">
+                            <div class="line-1 line"><span class="el-1 el"></span><span class="el-2 el"></span><span
+                                    class="el-3 el"></span><span class="el-4 el"></span><span
+                                    class="el-5 el"></span><span class="el-6 el"></span><span
+                                    class="el-7 el"></span><span class="el-8 el"></span><span
+                                    class="el-9 el"></span><span class="el-10 el"></span><span
+                                    class="el-11 el"></span><span class="el-12 el"></span><span
+                                    class="el-13 el"></span><span class="el-14 el"></span><span
+                                    class="el-15 el"></span><span class="el-16 el"></span><span class="el-17 el"></span>
+                            </div>
+                            <div class="line-2 line"><span class="el-1 el"></span><span class="el-2 el"></span><span
+                                    class="el-3 el"></span><span class="el-4 el"></span><span
+                                    class="el-5 el"></span><span class="el-6 el"></span><span
+                                    class="el-7 el"></span><span class="el-8 el"></span><span
+                                    class="el-9 el"></span><span class="el-10 el"></span><span
+                                    class="el-11 el"></span><span class="el-12 el"></span><span
+                                    class="el-13 el"></span><span class="el-14 el"></span><span
+                                    class="el-15 el"></span><span class="el-16 el"></span><span
+                                    class="el-17 el oran"></span></div>
+                            <div class="line-3 line"><span class="el-1 el"></span><span
+                                    class="el-2 el blue"></span><span class="el-3 el"></span><span
+                                    class="el-4 el"></span><span class="el-5 el"></span><span
+                                    class="el-6 el"></span><span class="el-7 el"></span><span
+                                    class="el-8 el"></span><span class="el-9 el"></span><span
+                                    class="el-10 el"></span><span class="el-11 el"></span><span
+                                    class="el-12 el"></span><span class="el-13 el"></span><span
+                                    class="el-14 el"></span><span class="el-15 el"></span><span
+                                    class="el-16 el blue"></span><span class="el-17 el"></span></div>
+                            <div class="line-4 line"><span class="el-1 el"></span><span
+                                    class="el-2 el blue"></span><span class="el-3 el"></span><span
+                                    class="el-4 el"></span><span class="el-5 el"></span><span
+                                    class="el-6 el"></span><span class="el-7 el"></span><span
+                                    class="el-8 el"></span><span class="el-9 el"></span><span
+                                    class="el-10 el"></span><span class="el-11 el"></span><span
+                                    class="el-12 el"></span><span class="el-13 el"></span><span
+                                    class="el-14 el"></span><span class="el-15 el"></span><span
+                                    class="el-16 el blue"></span><span class="el-17 el oran"></span></div>
+                            <div class="line-5 line"><span class="el-1 el"></span><span
+                                    class="el-2 el blue"></span><span class="el-3 el"></span><span
+                                    class="el-4 el"></span><span class="el-5 el"></span><span
+                                    class="el-6 el"></span><span class="el-7 el"></span><span
+                                    class="el-8 el"></span><span class="el-9 el"></span><span
+                                    class="el-10 el"></span><span class="el-11 el"></span><span
+                                    class="el-12 el"></span><span class="el-13 el"></span><span
+                                    class="el-14 el"></span><span class="el-15 el"></span><span
+                                    class="el-16 el blue"></span><span class="el-17 el"></span></div>
+                            <div class="line-6 line"><span class="el-1 el"></span><span
+                                    class="el-2 el blue"></span><span class="el-3 el"></span><span
+                                    class="el-4 el"></span><span class="el-5 el"></span><span
+                                    class="el-6 el"></span><span class="el-7 el"></span><span
+                                    class="el-8 el"></span><span class="el-9 el"></span><span
+                                    class="el-10 el"></span><span class="el-11 el"></span><span
+                                    class="el-12 el"></span><span class="el-13 el"></span><span
+                                    class="el-14 el"></span><span class="el-15 el blue"></span><span
+                                    class="el-16 el blue"></span><span class="el-17 el oran"></span></div>
+                            <div class="line-7 line"><span class="el-1 el"></span><span
+                                    class="el-2 el blue"></span><span class="el-3 el"></span><span
+                                    class="el-4 el blue"></span><span class="el-5 el"></span><span
+                                    class="el-6 el"></span><span class="el-7 el blue"></span><span
+                                    class="el-8 el"></span><span class="el-9 el"></span><span
+                                    class="el-10 el"></span><span class="el-11 el"></span><span
+                                    class="el-12 el"></span><span class="el-13 el"></span><span
+                                    class="el-14 el blue"></span><span class="el-15 el blue"></span><span
+                                    class="el-16 el blue"></span><span class="el-17 el"></span></div>
+                            <div class="line-8 line"><span class="el-1 el"></span><span
+                                    class="el-2 el blue"></span><span class="el-3 el"></span><span
+                                    class="el-4 el blue"></span><span class="el-5 el"></span><span
+                                    class="el-6 el"></span><span class="el-7 el blue"></span><span
+                                    class="el-8 el"></span><span class="el-9 el"></span><span
+                                    class="el-10 el"></span><span class="el-11 el"></span><span
+                                    class="el-12 el"></span><span class="el-13 el blue"></span><span
+                                    class="el-14 el blue"></span><span class="el-15 el blue"></span><span
+                                    class="el-16 el blue"></span><span class="el-17 el oran"></span></div>
+                            <div class="line-9 line"><span class="el-1 el"></span><span
+                                    class="el-2 el blue"></span><span class="el-3 el"></span><span
+                                    class="el-4 el blue"></span><span class="el-5 el"></span><span
+                                    class="el-6 el"></span><span class="el-7 el blue"></span><span
+                                    class="el-8 el"></span><span class="el-9 el"></span><span
+                                    class="el-10 el"></span><span class="el-11 el"></span><span
+                                    class="el-12 el"></span><span class="el-13 el blue"></span><span
+                                    class="el-14 el blue"></span><span class="el-15 el blue"></span><span
+                                    class="el-16 el blue"></span><span class="el-17 el"></span></div>
+                            <div class="line-10 line"><span class="el-1 el blue"></span><span
+                                    class="el-2 el blue"></span><span class="el-3 el"></span><span
+                                    class="el-4 el blue"></span><span class="el-5 el"></span><span
+                                    class="el-6 el blue"></span><span class="el-7 el blue"></span><span
+                                    class="el-8 el blue"></span><span class="el-9 el"></span><span
+                                    class="el-10 el blue"></span><span class="el-11 el"></span><span
+                                    class="el-12 el"></span><span class="el-13 el blue"></span><span
+                                    class="el-14 el blue"></span><span class="el-15 el blue"></span><span
+                                    class="el-16 el blue"></span><span class="el-17 el"></span></div>
+                            <div class="line-12 line"><span class="el-1 el blue"></span><span
+                                    class="el-2 el blue"></span><span class="el-3 el blue"></span><span
+                                    class="el-4 el blue"></span><span class="el-5 el blue"></span><span
+                                    class="el-6 el blue"></span><span class="el-7 el blue"></span><span
+                                    class="el-8 el blue"></span><span class="el-9 el blue"></span><span
+                                    class="el-10 el blue"></span><span class="el-11 el blue"></span><span
+                                    class="el-12 el"></span><span class="el-13 el blue"></span><span
+                                    class="el-14 el blue"></span><span class="el-15 el blue"></span><span
+                                    class="el-16 el blue"></span><span class="el-17 el oran"></span></div>
+                            <div class="line-13 line"><span class="el-1 el blue"></span><span
+                                    class="el-2 el blue"></span><span class="el-3 el blue"></span><span
+                                    class="el-4 el blue"></span><span class="el-5 el blue"></span><span
+                                    class="el-6 el blue"></span><span class="el-7 el blue"></span><span
+                                    class="el-8 el blue"></span><span class="el-9 el blue"></span><span
+                                    class="el-10 el blue"></span><span class="el-11 el blue"></span><span
+                                    class="el-12 el"></span><span class="el-13 el blue"></span><span
+                                    class="el-14 el blue"></span><span class="el-15 el blue"></span><span
+                                    class="el-16 el blue"></span><span class="el-17 el"></span></div>
+                            <div class="line-14 line"><span class="el-1 el blue"></span><span
+                                    class="el-2 el blue"></span><span class="el-3 el blue"></span><span
+                                    class="el-4 el blue"></span><span class="el-5 el blue"></span><span
+                                    class="el-6 el blue"></span><span class="el-7 el blue"></span><span
+                                    class="el-8 el blue"></span><span class="el-9 el blue"></span><span
+                                    class="el-10 el blue"></span><span class="el-11 el blue"></span><span
+                                    class="el-12 el"></span><span class="el-13 el blue"></span><span
+                                    class="el-14 el blue"></span><span class="el-15 el blue"></span><span
+                                    class="el-16 el blue"></span><span class="el-17 el oran"></span></div>
+                            <div class="line-15 line"><span class="el-1 el"></span><span class="el-2 el"></span><span
+                                    class="el-3 el"></span><span class="el-4 el"></span><span
+                                    class="el-5 el"></span><span class="el-6 el"></span><span
+                                    class="el-7 el"></span><span class="el-8 el"></span><span
+                                    class="el-9 el"></span><span class="el-10 el"></span><span
+                                    class="el-11 el"></span><span class="el-12 el"></span><span
+                                    class="el-13 el"></span><span class="el-14 el"></span><span
+                                    class="el-15 el"></span><span class="el-16 el"></span><span class="el-17 el"></span>
+                            </div>
+                            <div class="line-16 line"><span class="el-1 el"></span><span class="el-2 el"></span><span
+                                    class="el-3 el"></span><span class="el-4 el"></span><span
+                                    class="el-5 el"></span><span class="el-6 el"></span><span
+                                    class="el-7 el"></span><span class="el-8 el"></span><span
+                                    class="el-9 el"></span><span class="el-10 el"></span><span
+                                    class="el-11 el"></span><span class="el-12 el"></span><span
+                                    class="el-13 el"></span><span class="el-14 el"></span><span
+                                    class="el-15 el"></span><span class="el-16 el"></span><span
+                                    class="el-17 el oran"></span></div>
+                            <div class="line-17 line"><span class="el-1 el"></span><span class="el-2 el"></span><span
+                                    class="el-3 el"></span><span class="el-4 el"></span><span
+                                    class="el-5 el"></span><span class="el-6 el"></span><span
+                                    class="el-7 el"></span><span class="el-8 el"></span><span
+                                    class="el-9 el"></span><span class="el-10 el"></span><span
+                                    class="el-11 el"></span><span class="el-12 el"></span><span
+                                    class="el-13 el"></span><span class="el-14 el"></span><span
+                                    class="el-15 el"></span><span class="el-16 el"></span><span class="el-17 el"></span>
+                            </div>
+                            <div class="line-18 line"><span class="el-1 el"></span><span class="el-2 el"></span><span
+                                    class="el-3 el"></span><span class="el-4 el"></span><span
+                                    class="el-5 el"></span><span class="el-6 el"></span><span
+                                    class="el-7 el"></span><span class="el-8 el"></span><span
+                                    class="el-9 el"></span><span class="el-10 el"></span><span
+                                    class="el-11 el"></span><span class="el-12 el"></span><span
+                                    class="el-13 el"></span><span class="el-14 el"></span><span
+                                    class="el-15 el"></span><span class="el-16 el"></span><span
+                                    class="el-17 el oran"></span></div>
+                            <div class="line-19 line"><span class="el-1 el"></span><span class="el-2 el"></span><span
+                                    class="el-3 el"></span><span class="el-4 el"></span><span
+                                    class="el-5 el"></span><span class="el-6 el"></span><span
+                                    class="el-7 el"></span><span class="el-8 el"></span><span
+                                    class="el-9 el"></span><span class="el-10 el"></span><span
+                                    class="el-11 el"></span><span class="el-12 el"></span><span
+                                    class="el-13 el"></span><span class="el-14 el"></span><span
+                                    class="el-15 el"></span><span class="el-16 el"></span><span class="el-17 el"></span>
+                            </div>
+                            <div class="line-20 line"><span class="el-1 el"></span><span class="el-2 el"></span><span
+                                    class="el-3 el"></span><span class="el-4 el"></span><span
+                                    class="el-5 el"></span><span class="el-6 el"></span><span
+                                    class="el-7 el"></span><span class="el-8 el"></span><span
+                                    class="el-9 el"></span><span class="el-10 el"></span><span
+                                    class="el-11 el"></span><span class="el-12 el"></span><span
+                                    class="el-13 el"></span><span class="el-14 el"></span><span
+                                    class="el-15 el"></span><span class="el-16 el"></span><span class="el-17 el"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fourth-module__bottom">
+                        <input class="diagramm-range" type="range" min="1" max="200" value="100">
+                        <output class="bubble"></output>
+                    </div>
+                </div>
+                <div class="fourth-module__right">
+                    <div class="fourth-module__top-part">
+                        <div class="switch-wrap">
+                            <input type="radio" class="switch orange-switch" name="switch" data-target="sw1">
+                            <div class="switch-bar-bg oran-bg">
+                                <div class="switch-bar orange-bar" data-target="sw1"></div>
+                            </div>
+                        </div>
+                        <div class="switch-wrap">
+                            <input type="radio" class="switch" name="switch" data-target="sw2">
+                            <div class="switch-bar-bg">
+                                <div class="switch-bar" data-target="sw2"></div>
+                            </div>
+                        </div>
+                        <div class="switch-wrap">
+                            <input type="radio" class="switch orange-switch" name="switch" data-target="sw3">
+                            <div class="switch-bar-bg oran-bg">
+                                <div class="switch-bar orange-bar" data-target="sw3"></div>
+                            </div>
+                        </div>
+                        <div class="switch-wrap">
+                            <input type="radio" class="switch" name="switch" data-target="sw4">
+                            <div class="switch-bar-bg">
+                                <div class="switch-bar" data-target="sw4"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fourth-module__bottom-part">
+                        <div class="fourth-module__text">
+                            <span>Restore charts to normal</span>
+                        </div>
+                        <div class="fourth-module__graph">
+                            <ul class="graph-info">
+                                <li class="info">terrible</li>
+                                <li class="info">bad</li>
+                                <li class="info">normal</li>
+                            </ul>
+                            <img id="wave2" src="./images/wave2.svg" alt="wave">
+                            <img id="wave1" src="./images/wave1.svg" alt="wave">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Fifth section -->
+            <section class="fifth-module">
+                <div class="fifth-module__left">
+                    <div class="calendar-text">
+                        <span>Calendar</span>
+                    </div>
+                    <div class="calendar-month">
+                        <span>March</span>
+                    </div>
+                    <div class="calendar-days">
+                        <span>Mon</span>
+                        <span>Tue</span>
+                        <span>Th</span>
+                        <span>We</span>
+                        <span>Fr</span>
+                        <span>Sat</span>
+                        <span>Sn</span>
+                    </div>
+                    <div class="calendar-dates">
+                        <div class="date-line1 date-line">
+                            <span class="number blur">31</span>
+                            <span class="number">1</span>
+                            <span class="number">2</span>
+                            <span class="number">3</span>
+                            <span class="number">4</span>
+                            <span class="number">5</span>
+                            <span class="number">6</span>
+                        </div>
+                        <div class="date-line2 date-line">
+                            <span class="number">7</span>
+                            <span class="number">8</span>
+                            <span class="number">9</span>
+                            <span class="number">10</span>
+                            <span class="number">11</span>
+                            <span class="number">12</span>
+                            <span class="number">13</span>
+                        </div>
+                        <div class="date-line3 date-line">
+                            <span class="number">14</span>
+                            <span class="number">15</span>
+                            <span class="number">16</span>
+                            <span class="number">17</span>
+                            <span class="number">18</span>
+                            <span class="number">19</span>
+                            <span class="number">20</span>
+                        </div>
+                        <div class="date-line4 date-line">
+                            <span class="number">21</span>
+                            <span class="number">22</span>
+                            <span class="number">23</span>
+                            <span class="number">24</span>
+                            <span class="number">25</span>
+                            <span class="number">26</span>
+                            <span class="number">27</span>
+                        </div>
+                        <div class="date-line5 date-line">
+                            <span class="number">28</span>
+                            <span class="number">29</span>
+                            <span class="number">30</span>
+                            <span class="number">31</span>
+                            <span class="number blur">1</span>
+                            <span class="number blur">2</span>
+                            <span class="number blur">3</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fifth-module__right">
+                    <div class="fifth-module__top">
+                        <img src="./images/circle1.svg" alt="circle" class="circle">
+                        <img src="./images/circle2.svg" alt="circle" class="circle">
+                        <img src="./images/circle3.svg" alt="circle" class="circle">
+                        <img src="./images/circle4.svg" alt="circle" class="circle">
+                    </div>
+                    <div class="fifth-module__bottom">
+                        <div class="fifth-module__top-date">
+                            <div class="date-date date">45</div>
+                            <div class="date-month date">44</div>
+                        </div>
+                        <div class="fifth-module__bottom-date">
+                            <div class="date-hour date">44</div>
+                            <div class="date-min date">44</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="part-wrapper">
+                <div class="left-part">
+                    <span class="top-note">Afanaseva Darya</span>
+                    <span class="bottom-note">World Bank Balance</span>
+                </div>
+                <div class="right-part">
+                    <span class="top-note">2023</span>
+                    <span class="bottom-note">Art-practic</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-bg">
+        <div class="modal-body">
+            <h2 class="modal-text">
+                Confirm your self-destruction
+            </h2>
+            <div class="btn-wrap">
+                <button class="btn-cancel btn">No exit</button>
+                <button class="btn-agree btn">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Red Bg -->
+    <div class="red-bg"></div>
+    </div>
+</body>
+
+
+</html>
